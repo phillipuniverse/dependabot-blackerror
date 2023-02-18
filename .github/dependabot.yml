@@ -1,19 +1,10 @@
 # Docs at https://docs.github.com/en/code-security/supply-chain-security/keeping-your-dependencies-updated-automatically/configuration-options-for-dependency-updates#configuration-options-for-updates
 version: 2
 
-registries:
-  shipwell-pypi:
-    type: python-index
-    url: https://pypi.shipwell.com
-    username: shipwell
-    password: ${{secrets.SHIPWELL_PYPI_PASSWORD}}
-
 updates:
   - package-ecosystem: "pip"
     directory: /
     insecure-external-code-execution: allow
-    registries:
-      - shipwell-pypi
     schedule:
       interval: daily
     allow:
